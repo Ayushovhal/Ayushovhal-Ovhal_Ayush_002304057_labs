@@ -4,6 +4,7 @@
  */
 package ui.AccountManager;
 
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 import model.AccountDirectory;
 
@@ -55,6 +56,11 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
         jLabel5.setText("jLabel5");
 
         btnBack.setText("<<Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTitle.setText("Create Account");
@@ -135,6 +141,13 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
                 .addContainerGap(76, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
