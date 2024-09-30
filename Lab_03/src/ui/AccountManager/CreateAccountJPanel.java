@@ -5,7 +5,9 @@
 package ui.AccountManager;
 
 import java.awt.CardLayout;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import model.Account;
 import model.AccountDirectory;
 
 /**
@@ -82,6 +84,11 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
         txtBalance.setText(" ");
 
         btnCreate.setText("Create Account ");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -148,6 +155,38 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        // TODO add your handling code here:
+        int balance;
+        
+        String routingNumber = txtRoutingNumber.getText();
+        String accountNumber = txtAccountNumber.getText();
+        String bankName = txtBankName.getText();
+        
+        if(routingNumber.isBlank() || bankName.isBlank() || accountNumber.isBlank())
+        {
+            JOptionPane.showMessageDialog(this, "All Fields are Mandatory", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        try {
+            balance = Integer.parseInt(txtBalance.getText());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Please check the balance input.", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        Account a = accountDirectory.addAccount();
+        
+        a.setRountingNumber(routingNumber);
+        a.setAccountNumber(accountNumber);
+        a.setBankName(bankName);
+        a.setBalance(balance);
+        
+       
+            
+    }//GEN-LAST:event_btnCreateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
