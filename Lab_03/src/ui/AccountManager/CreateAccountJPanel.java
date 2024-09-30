@@ -171,7 +171,7 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
         }
         
         try {
-            balance = Integer.parseInt(txtBalance.getText());
+            balance = Integer.parseInt(txtBalance.getText().trim());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Please check the balance input.", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
@@ -179,11 +179,17 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
         
         Account a = accountDirectory.addAccount();
         
-        a.setRountingNumber(routingNumber);
+        a.setRoutingNumber(routingNumber);
         a.setAccountNumber(accountNumber);
         a.setBankName(bankName);
         a.setBalance(balance);
         
+        JOptionPane.showMessageDialog(this, "Account Succesfully created", "Information", JOptionPane.INFORMATION_MESSAGE);
+        
+        txtRoutingNumber.setText("");
+        txtAccountNumber.setText("");
+        txtBankName.setText("");
+        txtBalance.setText(bankName);
        
             
     }//GEN-LAST:event_btnCreateActionPerformed

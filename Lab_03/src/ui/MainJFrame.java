@@ -82,7 +82,7 @@ public class MainJFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
         );
 
         pack();
@@ -144,13 +144,13 @@ public class MainJFrame extends javax.swing.JFrame {
        
         Account newAccount = accountDirectory.addAccount();
         newAccount.setAccountNumber("123456");
-        newAccount.setRountingNumber("56789");
+        newAccount.setRoutingNumber("56789");
         newAccount.setBankName("Bank Of America");
         newAccount.setBalance(1000);
         
         Account anothernewAccount = accountDirectory.addAccount();
         newAccount.setAccountNumber("78945");
-        newAccount.setRountingNumber("56123");
+        newAccount.setRoutingNumber("56123");
         newAccount.setBankName("Chase Bank");
         newAccount.setBalance(1005);
         

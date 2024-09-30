@@ -14,6 +14,7 @@ public class Account {
     private String rountingNumber;
     private String accountNumber;
     private int balance;
+    private String routingNumber;
 
     public String getBankName() {
         return bankName;
@@ -27,8 +28,8 @@ public class Account {
         return rountingNumber;
     }
 
-    public void setRountingNumber(String rountingNumber) {
-        this.rountingNumber = rountingNumber;
+    public void setRoutingNumber(String routingNumber) {
+        this.routingNumber = routingNumber;
     }
 
     public String getAccountNumber() {
