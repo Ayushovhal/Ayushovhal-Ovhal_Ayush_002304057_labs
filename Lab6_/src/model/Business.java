@@ -7,6 +7,7 @@ package model;
 /**
  *
  * @author Legion
+ * //lab
  */
 public class Business {
     
@@ -22,7 +23,7 @@ public class Business {
         return masterOrderList;
     }
 
-    //public void setMasterOrderList(MasterOrderList masterOrderList) {
+    public void setMasterOrderList(MasterOrderList masterOrderList) {
         this.masterOrderList = masterOrderList;
     }
 
@@ -37,3 +38,4 @@ public class Business {
         
     
 }
+
