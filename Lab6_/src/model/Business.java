@@ -30,7 +30,7 @@ public class Business {
         return supplierDirectory;
     }
 
-    public void setSupplierDirectory(SupplierDirectory supplierDirectory) {
+    //public void setSupplierDirectory(SupplierDirectory supplierDirectory) {
         this.supplierDirectory = supplierDirectory;
     }
     
